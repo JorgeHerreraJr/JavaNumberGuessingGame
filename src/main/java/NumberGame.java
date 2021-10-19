@@ -31,6 +31,8 @@ public class NumberGame {
         boolean shouldFinish = false;
 
         while (!shouldFinish) {
+            attempts++;
+
             if (attempts < 5) {
                 if (guess == number) {
                     hasWon = true;
@@ -49,5 +51,13 @@ public class NumberGame {
                 shouldFinish = true;
             }
         }
+        if (hasWon) {
+            System.out.println("Congrats. You guessed " + attempts + " times.");
+        }
+        else {
+            System.out.println("Game Over");
+            System.out.println("The Number was: " + number);
+        }
+
     }
 }
